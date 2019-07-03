@@ -1,0 +1,34 @@
+
+{{ define "main" }}
+<div class="post-card">
+	<h1>{{.Title}}</h1>
+	<section>
+		{{.Content}}
+	</section>
+	<section>
+    	{{ range .Params.tags }}
+    	<a href='{{ "tags" | absURL }}/{{ . | urlize }}'>{{ . }}</a>
+    	{{ end }}
+	</section>
+	<section>
+		<h2>Resources</h2>
+		{{ with .Resources }}
+			<ul class="grid">
+				{{ range . }}
+					<li>
+						{{if eq .ResourceType "image"}}
+							<img src={{.RelPermalink}} width=100>
+						{{else if eq .ResourceType "mp4"}}
+							<video controls disablePictureInPicture controlsList="nodownload" width=100>
+								<source src={{ .RelPermalink }} type={{.MediaType}} >
+							</video>
+						{{else}}
+							<a href={{ .RelPermalink }}>{{.title}}</a>
+						{{end}}
+					</li>
+				{{ end }}
+			</ul>
+		{{ end }}
+	</section>
+</div>
+{{ end }}

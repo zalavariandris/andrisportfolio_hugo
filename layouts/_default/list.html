@@ -1,0 +1,19 @@
+{{ define "main" }}
+	<h1>{{ .Title }}</h1>
+	<ul>
+		{{ range .Pages.ByPublishDate.Reverse }}
+		<li class="post-card">
+			<article>
+				<a href="{{ .RelPermalink }}">{{ .Title }}</a>
+				<div>
+					
+					{{ range .Page.Resources }}
+					<a href="{{ .RelPermalink }}">resource: {{ .ResourceType | title }}</a>
+					{{ end }}
+				</div>
+				{{.Content}}
+			</article>
+		</li>
+		{{ end }}
+	</ul>
+{{ end }}

@@ -1,0 +1,42 @@
+body{
+	background: rgb(240, 240, 240);
+}
+
+body{
+	font-size: 16px;
+	max-width: 50em;
+	margin: auto;
+}
+
+.post-card{
+	background: white;
+	padding: 20px;
+	margin: 100px 0;
+}
+
+ul.grid{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+}
+ul.grid li{
+	margin-right: 1em;
+}
+
+video{
+	border-top: 5px solid black;
+	border-bottom: 5px solid black;
+	border-left: 5px dashed black;
+	border-right: 5px dashed black;
+	border-width: 3px;
+	border-radius: 5px;
+	position: relative;
+}
+
+img{
+	border: 5px solid white;
+    border-radius: 2px;
+    box-shadow: 1px 2px 3px #00000045;
+}
+
